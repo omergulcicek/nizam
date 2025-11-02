@@ -2,7 +2,7 @@
   "name": "nizam",
   "version": "16.0.0",
   "private": true,
-  "description": "Modern Next.js 16 + TypeScript + Tailwind v4 boilerplate with best practices.",
+  "description": "Production-ready Next.js 16+ starter built with Tailwind CSS 4 and TypeScript.",
   "author": {
     "name": "Ömer Gülçiçek",
     "email": "iletisim@omergulcicek.com",

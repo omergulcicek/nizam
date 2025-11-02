@@ -1,1 +1,1 @@
-export { Counter } from "./Counter";
+export { Counter } from "@/components/widgets/counter/Counter";

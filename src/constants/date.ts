@@ -1,7 +1,7 @@
 import type { Locale } from "date-fns";
 import { arSA, de, enUS, tr } from "date-fns/locale";
 
-import { DEFAULT_LOCALE, LOCALES, type LocaleCode } from "./i18n";
+import { DEFAULT_LOCALE, LOCALES, type LocaleCode } from "@/constants/i18n";
 
 export const normalizeLocale = (loc?: string): LocaleCode => {
   const base = (loc ?? DEFAULT_LOCALE).split("-")[0] as LocaleCode;

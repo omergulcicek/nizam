@@ -6,16 +6,17 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
+import { seoConfig } from "@/config/seo";
+import { siteConfig } from "@/config/site";
+import { env } from "@/env";
+
 import { routing } from "@/i18n/routing";
 
 import { Header } from "@/components/layouts";
 import { Toaster } from "@/components/ui/sonner";
-import { seoConfig } from "@/config/seo";
-import { siteConfig } from "@/config/site";
-import { env } from "@/env";
 import { Providers } from "@/providers";
 
-import "../../styles/tailwind.css";
+import "@/tailwind";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

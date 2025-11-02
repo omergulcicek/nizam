@@ -20,10 +20,21 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/providers/*": ["./src/providers/*"],
+      "@/tailwind": ["./src/styles/tailwind.css"],
+      "@/components/*": ["./src/components/*"],
+      "@/features/*": ["./src/components/features/*"],
+      "@/layouts/*": ["./src/components/layouts/*"],
       "@/widgets/*": ["./src/components/widgets/*"],
-      "@/ui/*": ["./src/components/ui/*"]
+      "@/ui/*": ["./src/components/ui/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/schemas/*": ["./src/schemas/*"],
+      "@/stores/*": ["./src/stores/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/providers/*": ["./src/providers/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
   "include": [
