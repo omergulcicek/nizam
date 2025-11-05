@@ -1,1 +1,1 @@
-export * from "@/components/widgets/locale-switcher/LocaleSwitcher";
+export * from "./LocaleSwitcher";

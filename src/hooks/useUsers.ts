@@ -7,6 +7,7 @@ import { UserType } from "@/types";
 export function useUsers() {
   return useQuery({
     queryKey: ["users"],
-    queryFn: ({ signal }) => get<UserType[]>("/users", { signal })
+    queryFn: ({ signal }) => get<UserType[]>("/users", { signal }),
+    select: (data) => data.slice(0, 5)
   });
 }

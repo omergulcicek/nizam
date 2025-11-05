@@ -12,7 +12,7 @@ export function IntlProvider({
   locale?: string;
 }) {
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
+    <NextIntlClientProvider messages={messages} locale={locale} timeZone="Europe/Istanbul">
       {children}
     </NextIntlClientProvider>
   );

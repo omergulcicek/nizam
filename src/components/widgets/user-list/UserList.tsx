@@ -1,35 +1,149 @@
 "use client";
 
+import { useMemo, useState } from "react";
+
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
+  SortingState,
+  useReactTable
+} from "@tanstack/react-table";
+import { ArrowUpDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { useUsers } from "@/hooks/useUsers";
 
-import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table";
+import type { UserType } from "@/types";
 
 export function UserList() {
-  const { data = [], isPending, isFetching, isError, error } = useUsers();
-  const t = useTranslations("HomePage");
+  const { data = [], isPending, isError, error } = useUsers();
+  const t = useTranslations("UserList");
 
-  if (isError)
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [globalFilter, setGlobalFilter] = useState<string>("");
+
+  const columns = useMemo<ColumnDef<UserType>[]>(
+    () => [
+      {
+        accessorKey: "id",
+        header: ({ column }) => (
+          <span
+            className="flex cursor-pointer items-center gap-2 [&_svg]:size-4"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            {t("id")}
+            <ArrowUpDown />
+          </span>
+        )
+      },
+      {
+        accessorKey: "name",
+        header: ({ column }) => (
+          <span
+            className="flex cursor-pointer items-center gap-2 [&_svg]:size-4"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            {t("name")}
+            <ArrowUpDown />
+          </span>
+        )
+      },
+      {
+        accessorKey: "email",
+        header: () => <span>{t("email")}</span>,
+        enableSorting: false,
+        cell: ({ row }) => <div className="lowercase">{row.getValue("email") as string}</div>
+      }
+    ],
+    [t]
+  );
+
+  // eslint-disable-next-line react-hooks/incompatible-library
+  const table = useReactTable({
+    data: (data as UserType[]) ?? [],
+    columns,
+    onSortingChange: setSorting,
+    getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    onGlobalFilterChange: setGlobalFilter,
+    state: { sorting, globalFilter }
+  });
+
+  if (isError) {
     return (
-      <div>
-        {t("error")}: {(error as Error).message}
-      </div>
+      <section className="mt-10">
+        <div>
+          {t("error")}: {(error as Error).message}
+        </div>
+      </section>
     );
+  }
 
   return (
-    <div>
-      <Button disabled={isFetching}>{t("fetchUsers")}</Button>
-
-      {isPending && !data.length && <div>{t("loading")}</div>}
-
-      {!!data.length && (
-        <ul className="space-y-1">
-          {data.map((u) => (
-            <li key={u.id}>{u.name}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <section className="col-span-3 lg:col-span-2">
+      <div className="flex items-center py-4">
+        <Input
+          placeholder={t("searchPlaceholder")}
+          value={globalFilter}
+          onChange={(e) => setGlobalFilter(e.target.value)}
+          className="max-w-56"
+        />
+      </div>
+      <div className="overflow-hidden rounded-md border">
+        <Table>
+          <TableHeader className="bg-muted">
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(header.column.columnDef.header, header.getContext())}
+                  </TableHead>
+                ))}
+              </TableRow>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {isPending ? (
+              <TableRow>
+                <TableCell colSpan={columns.length} className="h-24 text-center">
+                  {t("loading")}
+                </TableCell>
+              </TableRow>
+            ) : table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={columns.length} className="h-24 text-center">
+                  {t("noResults")}
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
+    </section>
   );
 }

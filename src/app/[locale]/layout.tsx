@@ -12,7 +12,7 @@ import { env } from "@/env";
 
 import { routing } from "@/i18n/routing";
 
-import { Header } from "@/components/layouts";
+import { Footer, Header } from "@/components/layouts";
 import { Toaster } from "@/components/ui/sonner";
 import { Providers } from "@/providers";
 
@@ -58,11 +58,14 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen w-full flex-col antialiased`}
+      >
         <Providers messages={messages} locale={locale}>
           <Header />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <Toaster richColors />
+          <Footer />
         </Providers>
 
         {env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />}

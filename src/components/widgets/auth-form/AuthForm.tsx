@@ -1,10 +1,11 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-import { authSchema, type AuthFormValues } from "@/schemas/auth.schema";
+import { createAuthSchema, type AuthFormValuesType } from "@/schemas/auth.schema";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,55 +19,67 @@ import {
 import { Input } from "@/components/ui/input";
 
 export function AuthForm() {
-  const form = useForm<AuthFormValues>({
-    resolver: zodResolver(authSchema),
+  const tForm = useTranslations("AuthForm");
+  const tSchema = useTranslations("AuthSchema");
+
+  const form = useForm<AuthFormValuesType>({
+    resolver: zodResolver(createAuthSchema(tSchema)),
     defaultValues: { username: "", password: "" }
   });
 
-  const onSubmit = form.handleSubmit(() => {
-    toast.success("Giriş başarılı");
+  const onSubmit = form.handleSubmit((data) => {
+    toast("", {
+      description: <pre className="text-xs">{JSON.stringify(data, null, 2)}</pre>,
+      duration: 5000
+    });
   });
 
   return (
-    <Form {...form}>
-      <form onSubmit={onSubmit} className="w-full max-w-xs space-y-5">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Kullanıcı Adı</FormLabel>
-              <FormControl>
-                <Input placeholder="omergulcicek" autoComplete="username" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <section className="col-span-3 mt-16 space-y-5 lg:col-span-1">
+      <Form {...form}>
+        <form onSubmit={onSubmit} className="space-y-5">
+          <FormField
+            control={form.control}
+            name="username"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{tForm("usernameLabel")}</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={tForm("usernamePlaceholder")}
+                    autoComplete="username"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Şifre</FormLabel>
-              <FormControl>
-                <Input
-                  type="password"
-                  placeholder="••••••••"
-                  autoComplete="current-password"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{tForm("passwordLabel")}</FormLabel>
+                <FormControl>
+                  <Input
+                    type="password"
+                    placeholder={tForm("passwordPlaceholder")}
+                    autoComplete="current-password"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <Button type="submit" className="w-full">
-          Giriş Yap
-        </Button>
-      </form>
-    </Form>
+          <Button type="submit" className="w-full">
+            {tForm("submit")}
+          </Button>
+        </form>
+      </Form>
+    </section>
   );
 }

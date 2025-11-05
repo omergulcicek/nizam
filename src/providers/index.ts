@@ -1,4 +1,4 @@
-export * from "@/providers/Providers";
-export { ThemeProvider } from "@/providers/ThemeProvider";
-export { IntlProvider } from "@/providers/IntlProvider";
-export { QueryProvider } from "@/providers/QueryProvider";
+export * from "./Providers";
+export { ThemeProvider } from "./ThemeProvider";
+export { IntlProvider } from "./IntlProvider";
+export { QueryProvider } from "./QueryProvider";

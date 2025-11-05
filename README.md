@@ -60,8 +60,6 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
 The variable schema is defined in `src/env.ts`.
 
----
-
 ## Customization
 
 You can quickly tailor the Next.js Boilerplate to your needs by searching the project for `FIXME:` tags.
@@ -75,8 +73,6 @@ You can quickly tailor the Next.js Boilerplate to your needs by searching the pr
 - `src/constants/i18n.ts`: Localization settings (supported and default locales)
 - `src/lib/api.ts`: Axios instance and request helpers based on `NEXT_PUBLIC_API_URL`
 
----
-
 ## Project structure
 
 ```
@@ -85,10 +81,10 @@ You can quickly tailor the Next.js Boilerplate to your needs by searching the pr
 │   ├── app/                            # App Router with locale support
 │   ├── assets/                         # Static and vector assets
 │   ├── components/                     # UI and shared components
-│   │   ├── features                    # Components with logic and hooks
+│   │   ├── icons                       # Svg icons
 │   │   ├── layouts                     # Page structure (header, footer, sidebar)
 │   │   ├── ui                          # Atomic and reusable UI elements
-│   │   └── widgets                     # Presentational components without logic
+│   │   └── widgets                     # Advanced UI components
 │   ├── config/                         # Site and SEO configurations
 │   ├── constants/                      # Global constants (i18n, date, etc.)
 │   ├── hooks/                          # Custom React hooks
@@ -106,9 +102,31 @@ You can quickly tailor the Next.js Boilerplate to your needs by searching the pr
 └── tsconfig.json                       # TypeScript configuration
 ```
 
----
+## Tips & Recommendations
+
+- **Cursor rules (for Cursor users)**: This repository centralizes AI/editor collaboration rules in `.cursor/rules`. If you use Cursor, review this file and keep it aligned with the conventions in this README (naming, structure, types, a11y, styling).
+
+- **Cookies (server-side)**: Use Next.js App Router APIs for cookies.
+  - `cookies()` from `next/headers` (read/write in server components/actions)
+  - `NextResponse.cookies.set` in route handlers/middleware
+  - Docs: `https://nextjs.org/docs/app/api-reference/functions/cookies`
+
+- **Helpers (formatting & slug)**:
+  - Currency/number/date formatting via `next-intl`:
+    - Client: `useFormatter()`
+    - Server: `getFormatter()`
+  - Slug generation: `@sindresorhus/slugify`
+
+- **Useful hooks (`usehooks-ts`)**: Recommended utilities for common needs
+  - `useLocalStorage`, `useSessionStorage`
+  - `useMediaQuery`
+  - `useDebounceValue`
+  - `useOnClickOutside`
+  - `useCopyToClipboard`
 
 ## Naming Conventions
+
+The following naming conventions are recommended for the project.
 
 | Type                               | Example                              | Style                        |
 | ---------------------------------- | ------------------------------------ | ---------------------------- |
@@ -118,7 +136,9 @@ You can quickly tailor the Next.js Boilerplate to your needs by searching the pr
 | Helper / util files                | `format-currency.ts`                 | kebab-case                   |
 | Hook files                         | `use-users.ts`                       | kebab-case                   |
 | Hook functions                     | `useUsers`                           | camelCase (prefix `use`)     |
+| Datas                              | `user.data.ts`                       | kebab-case (suffix `.data`)  |
 | Stores                             | `counter.store.ts`                   | kebab-case (suffix `.store`) |
+| Icons                              | `ReactIcon`                          | PascalCase (suffix `Icon`)   |
 | Types & interfaces                 | `UserType`                           | PascalCase (suffix `Type`)   |
 | Type files                         | `user.type.ts`                       | kebab-case (suffix `.type`)  |
 | Constants                          | `DEFAULT_LOCALE`                     | SNAKE_CASE                   |
@@ -165,4 +185,4 @@ Benefits include automatic release notes and semantic versioning based on commit
 ---
 
 Created by [Ömer Gülçiçek](https://github.com/omergulcicek)  
-Support: buy me a coffee or sponsor via email: iletisim@omergulcicek.com
+Support: [Sponsor on GitHub](https://github.com/sponsors/omergulcicek) or <a href="mailto:iletisim@omergulcicek.com">iletisim@omergulcicek.com</a>

@@ -1,7 +1,0 @@
-{
-  "HomePage": {
-    "fetchUsers": "Benutzer abrufen",
-    "loading": "Lädt...",
-    "error": "Fehler"
-  }
-}

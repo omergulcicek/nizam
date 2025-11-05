@@ -1,1 +1,2 @@
-export * from "@/components/layouts/header";
+export * from "./footer";
+export * from "./header";
