@@ -1,19 +1,21 @@
-![ViraStack Start](./assets/virastack-start.png)
+<div align="center">
 
-# ViraStack Start
+<img src="https://raw.githubusercontent.com/virastack/start/main/assets/virastack-start.png" alt="ViraStack Start" width="440" style="max-width: 100%;" />
 
-**One command. Production-ready stack.**
-
-Scaffold new projects and add tools from the [ViraStack](https://virastack.com) ecosystem.
+*One command. Production-ready stack.*
 
 [![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com)
 [![npm version](https://img.shields.io/npm/v/virastack)](https://www.npmjs.com/package/virastack)
 [![npm downloads](https://img.shields.io/npm/dt/virastack)](https://www.npmjs.com/package/virastack)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.9-339933?logo=node.js&logoColor=white)](package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![X @virastack](https://img.shields.io/badge/X-@virastack-black?logo=x)](https://x.com/virastack)
+[![@virastack](https://img.shields.io/badge/-%40virastack-black?logo=x&logoColor=white)](https://x.com/virastack)
+
+</div>
 
 ---
+
+Scaffold new projects and add tools from the [ViraStack](https://virastack.com) ecosystem.
 
 ## Who is this for?
 
