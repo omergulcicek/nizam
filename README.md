@@ -17,11 +17,13 @@
 
 ### [Read the full documentation →](https://virastack.com/start/)
 
-## Who is this for?
+## Why ViraStack Start?
 
-- Teams that want a consistent Next.js or TanStack Start foundation
-- Developers who want AI rules, architecture, and tooling ready on day one
-- Anyone bootstrapping a new product without reinventing the stack
+- **Interactive CLI:** Interactive prompts for template selection, project naming, and ecosystem tool integration.
+- **Production-Ready Foundations:** Scaffolds Next.js or TanStack Start projects with pre-configured feature-sliced architecture.
+- **Built-in AI Protocols:** Integrates `@virastack/ai` automatically, giving your coding agents a strict "constitution" from day one.
+- **Design & UX Best Practices:** Includes specialized UI standards and design skills from Emil Kowalski and Jakub Krehel.
+- **Ecosystem Integration:** Add optional ViraStack tools (`@virastack/mask`, `@virastack/password`) seamlessly.
 
 ## Quick Start
 
