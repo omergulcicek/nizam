@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/virastack/start/main/assets/virastack-start.png" alt="ViraStack Start" width="440" style="max-width: 100%;" />
 
-*One command. Production-ready stack.*
+*Production-grade scaffolding CLI for modern React — initialize feature-sliced, AI-ready stacks in one command.*
 
 [![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com)
 [![npm version](https://img.shields.io/npm/v/virastack)](https://www.npmjs.com/package/virastack)
