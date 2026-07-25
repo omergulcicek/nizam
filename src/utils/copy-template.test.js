@@ -5,6 +5,8 @@ import { shouldIgnore } from "./copy-template.js";
 describe("shouldIgnore", () => {
   it("ignores build artifacts and lockfiles", () => {
     expect(shouldIgnore(".next")).toBe(true);
+    expect(shouldIgnore(".tanstack")).toBe(true);
+    expect(shouldIgnore(".output")).toBe(true);
     expect(shouldIgnore("node_modules")).toBe(true);
     expect(shouldIgnore("pnpm-lock.yaml")).toBe(true);
     expect(shouldIgnore("coverage")).toBe(true);

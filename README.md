@@ -17,7 +17,7 @@ Scaffold new projects and add tools from the [ViraStack](https://virastack.com) 
 
 ## Who is this for?
 
-- Teams that want a consistent Next.js (and soon TanStack Start) foundation
+- Teams that want a consistent Next.js or TanStack Start foundation
 - Developers who want AI rules, architecture, and tooling ready on day one
 - Anyone bootstrapping a new product without reinventing the stack
 
@@ -55,11 +55,11 @@ npx virastack add password
 ## What it asks
 
 1. **Project name** — a folder name, or `.` for the current directory.
-2. **Template** — Next.js App Router (TanStack Start coming soon).
+2. **Template** — Next.js App Router or TanStack Start.
 3. **Multi-language (i18n)** — Choose whether you need built-in internationalization support.
 4. **ViraStack tools** — optional `@virastack/mask`, `@virastack/password`.
 
-Scaffolded Next.js projects include a pre-configured [**ViraStack AI**](https://github.com/virastack/ai) layer (architecture & rules), alongside specialized design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better).
+Scaffolded projects include a pre-configured [**ViraStack AI**](https://github.com/virastack/ai) layer (architecture & rules), alongside specialized design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better).
 
 ## Tools
 

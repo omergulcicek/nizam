@@ -12,6 +12,7 @@
 - Anonymous telemetry with opt-out (`--telemetry-disable`, `DO_NOT_TRACK`)
 - Vitest unit tests for CLI utils; CI smoke scaffold + `npm test`
 - Next.js App Router template (React 19, Tailwind CSS 4, Base UI, TanStack Query, Zustand, nuqs, Zod, RHF)
+- TanStack Start template (same DX/AI/landing stack; file-based Router + SSR)
 - Canonical `features/landing` demo (delete to start clean); `LandingPage` + reusable layout chrome
 - Agent-ready layer via `@virastack/ai` (fetch-first API rules, `ApiError`, `pnpm typecheck`)
 - Quality gates: ESLint, Prettier, Knip, Husky (`npm run` pre-push), Commitlint, GitHub Actions

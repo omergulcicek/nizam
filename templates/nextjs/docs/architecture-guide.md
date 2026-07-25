@@ -10,12 +10,11 @@
 | **UI / Styling** | shadcn/ui + Tailwind                              | `ui-components.mdc`    |
 | **API Client**   | Native fetch wrapper (default) / Axios (optional) | `api.mdc`              |
 
-## Framework Isolation Boundary
+## Framework Boundary
 
-Implementation details for Next.js and TanStack Start are strictly segregated. Framework-specific patterns are delegated to their respective .mdc rules.
+This template targets **Next.js 16** (App Router). Framework-specific patterns live in:
 
 - **Next.js 16:** See `.cursor/rules/nextjs.mdc`
-- **TanStack Start:** See `.cursor/rules/tanstack-start.mdc`
 
 **Shared Layer:** Global folders under `src/` (`components/`, `lib/`, `hooks/`, `schemas/`, …). Do not invent a parallel `src/shared` tree.
 
@@ -103,7 +102,6 @@ This document is the architectural map. Enforceable laws are located in:
 - `Ref: .cursor/rules/react-best-practices.mdc`
 - `Ref: .cursor/rules/state-management.mdc`
 - `Ref: .cursor/rules/tanstack-query.mdc`
-- `Ref: .cursor/rules/tanstack-start.mdc`
 - `Ref: .cursor/rules/testing.mdc`
 - `Ref: .cursor/rules/typescript.mdc`
 - `Ref: .cursor/rules/ui-components.mdc`

@@ -1,0 +1,61 @@
+---
+description: "USE WHEN: Defining HTTP requests, endpoints, and handling API responses."
+globs: "src/lib/api.ts,src/features/**/api/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# API Layer
+
+## Constraints
+
+* **Location:** Place all HTTP calls under `features/[feature]/api`.
+* **Validation:** Use Zod for input/output validation when data is external or untrusted. Parse responses before they reach UI or state.
+* **Return Type:** Return typed data, not raw responses.
+* **Error Handling:** Normalize HTTP failures to a consistent `ApiError` (`message`, `status`, `data`) before throwing.
+* **HTTP Client Strategy:**
+  - **CRITICAL CHECK:** Check `package.json` to determine the project's HTTP client.
+  - **Default (ViraStack):** Prefer a centralized native `fetch` wrapper (e.g., `src/lib/api.ts`) when `axios` is not installed.
+  - If `axios` is installed, use a centralized `axios` instance (e.g., `src/lib/api.ts`) instead.
+  - Match the wrapper's return shape: fetch wrappers typically return `T` directly; axios returns `{ data }`.
+* **Interceptors:** Handle cross-cutting concerns (auth, headers, JSON parsing, retries) within the centralized client/wrapper.
+* **Naming:** `verb-entity.api.ts` (e.g., `get-users.api.ts`). Function: `getUsers`.
+* **SSR Safety:** Use only whitelisted internal URLs or absolute paths for server-to-server calls to prevent SSRF.
+
+## Bans
+
+* **Raw Exposure:** Forbidden to use raw API data inside UI components, hooks, or state without validation.
+* **Logic Leaks:** Forbidden to leak internal error stack traces or raw errors to the client.
+* **Security:** Forbidden to construct dynamic URLs using unsanitized user inputs.
+* **Architecture:** NEVER make raw HTTP calls (`fetch()` or `axios.get()`) directly inside feature components or hooks. Always use the project's centralized API client/wrapper. No cross-feature API imports, no hardcoded endpoint strings in queries.
+
+## Correct Implementation
+
+<example>
+```ts
+// Native fetch wrapper (default when axios is not installed)
+export const getUsers = async (): Promise<User[]> => {
+  const data = await api.get<User[]>("/users");
+  return UserSchema.array().parse(data);
+};
+```
+</example>
+
+<example>
+```ts
+// Axios instance (only when axios is in package.json)
+export const getUsers = async (): Promise<User[]> => {
+  const { data } = await api.get<User[]>("/users");
+  return UserSchema.array().parse(data);
+};
+```
+</example>
+
+## Incorrect Implementation
+
+<incorrect-example>
+```tsx
+useEffect(() => {
+  fetch("/users").then((res) => res.json());
+}, []);
+```
+</incorrect-example>

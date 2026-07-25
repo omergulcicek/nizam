@@ -1,0 +1,7 @@
+.next
+node_modules
+pnpm-lock.yaml
+public
+CHANGELOG.md
+.changeset
+src/routeTree.gen.ts
