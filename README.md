@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/virastack/start/main/assets/virastack-start.png" alt="ViraStack Start" width="440" style="max-width: 100%;" />
+<img src="https://raw.githubusercontent.com/virastack/start/main/assets/virastack-start.png" alt="ViraStack Start" height="120" style="max-width: 100%;" />
 
 *Production-grade scaffolding CLI for modern React — integrate ecosystem tools in one command.*
 
@@ -22,34 +22,15 @@
 - **Interactive CLI:** Interactive prompts for template selection, project naming, and ecosystem tool integration.
 - **Production-Ready Foundations:** Scaffolds Next.js or TanStack Start projects with pre-configured feature-sliced architecture.
 - **Built-in AI Protocols:** Integrates `@virastack/ai` automatically, giving your coding agents a strict "constitution" from day one.
-- **Design & UX Best Practices:** Includes specialized UI standards and design skills from Emil Kowalski and Jakub Krehel.
+- **End-to-End Type Safety:** Strict TypeScript rules, Zod validation, and native package manager alignment (pnpm, npm, yarn, bun).
 - **Ecosystem Integration:** Add optional ViraStack tools (`@virastack/mask`, `@virastack/password`) seamlessly.
+
+Scaffolded projects include a pre-configured [**ViraStack AI**](https://github.com/virastack/ai) layer (architecture & rules), alongside specialized design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better).
 
 ## Quick Start
 
 ```bash
 npx virastack
-```
-
-Turkish prompts:
-
-```bash
-npx virastack --tr
-```
-
-Non-interactive (CI / scripts):
-
-```bash
-npx virastack my-app --yes
-npx virastack init my-app --template nextjs --tools mask,password --yes
-npx virastack my-app --yes --skip-install
-```
-
-Add a ViraStack tool to an existing project:
-
-```bash
-npx virastack add mask
-npx virastack add password
 ```
 
 ## What it asks
@@ -58,8 +39,6 @@ npx virastack add password
 2. **Template** — Next.js App Router or TanStack Start.
 3. **Multi-language (i18n)** — Choose whether you need built-in internationalization support.
 4. **ViraStack tools** — optional `@virastack/mask`, `@virastack/password`.
-
-Scaffolded projects include a pre-configured [**ViraStack AI**](https://github.com/virastack/ai) layer (architecture & rules), alongside specialized design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better).
 
 ## Tools
 
