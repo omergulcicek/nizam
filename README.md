@@ -2,11 +2,11 @@
 
 <img src="https://raw.githubusercontent.com/virastack/start/main/assets/virastack-start.png" alt="ViraStack Start" width="440" style="max-width: 100%;" />
 
-*Production-grade scaffolding CLI for modern React — initialize feature-sliced, AI-ready stacks in one command.*
+*Production-grade scaffolding CLI for modern React — initialize AI-ready stacks and integrate ecosystem tools in one command.*
 
 [![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com)
-[![npm version](https://img.shields.io/npm/v/virastack)](https://www.npmjs.com/package/virastack)
-[![npm downloads](https://img.shields.io/npm/dt/virastack)](https://www.npmjs.com/package/virastack)
+[![npm version](https://img.shields.io/npm/v/virastack?color=blue)](https://www.npmjs.com/package/virastack)
+[![npm downloads](https://img.shields.io/npm/dt/virastack?color=blue)](https://www.npmjs.com/package/virastack)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.9-339933?logo=node.js&logoColor=white)](package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![@virastack](https://img.shields.io/badge/-%40virastack-black?logo=x&logoColor=white)](https://x.com/virastack)
@@ -15,17 +15,13 @@
 
 ---
 
-Scaffold new projects and add tools from the [ViraStack](https://virastack.com) ecosystem.
+### [Read the full documentation →](https://virastack.com/cli/)
 
 ## Who is this for?
 
 - Teams that want a consistent Next.js or TanStack Start foundation
 - Developers who want AI rules, architecture, and tooling ready on day one
 - Anyone bootstrapping a new product without reinventing the stack
-
-## Prerequisites
-
-- Node.js `>=20.9`
 
 ## Quick Start
 
