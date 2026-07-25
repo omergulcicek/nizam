@@ -85,7 +85,7 @@ Ideas and bug reports are welcome — open an [issue](https://github.com/virasta
 
 ## Explore the ViraStack Ecosystem
 
-Discover all tools and libraries at [**virastack.com**](https://virastack.com).
+Discover all ViraStack tools, libraries, and boilerplates at [**virastack.com**](https://virastack.com).
 
 ## License
 
