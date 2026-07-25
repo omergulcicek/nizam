@@ -4,7 +4,7 @@
 
 *Production-grade scaffolding CLI for modern React — integrate ecosystem tools in one command.*
 
-[![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com)
+[![ViraStack Start](https://img.shields.io/badge/ViraStack-Start-%2300bba7)](https://virastack.com/start/)
 [![npm version](https://img.shields.io/npm/v/virastack?color=blue)](https://www.npmjs.com/package/virastack)
 [![npm downloads](https://img.shields.io/npm/dt/virastack)](https://www.npmjs.com/package/virastack)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.9-339933?logo=node.js&logoColor=white)](package.json)
@@ -21,11 +21,9 @@
 
 - **Interactive CLI:** Interactive prompts for template selection, project naming, and ecosystem tool integration.
 - **Production-Ready Foundations:** Scaffolds Next.js or TanStack Start projects with pre-configured feature-sliced architecture.
-- **Built-in AI Protocols:** Integrates `@virastack/ai` automatically, giving your coding agents a strict "constitution" from day one.
+- **Built-in AI Protocols:** Integrates `@virastack/ai` automatically — architecture rules, `AGENTS.md`, and design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better) — giving your coding agents a strict "constitution" from day one.
 - **End-to-End Type Safety:** Strict TypeScript rules, Zod validation, and native package manager alignment (pnpm, npm, yarn, bun).
 - **Ecosystem Integration:** Add optional ViraStack tools (`@virastack/mask`, `@virastack/password`) seamlessly.
-
-Include pre-configured [**ViraStack AI**](https://github.com/virastack/ai) layer (architecture & rules), alongside design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better).
 
 ## Quick Start
 
