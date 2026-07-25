@@ -35,10 +35,12 @@ npx virastack
 
 ## What it asks
 
-1. **Project name** — a folder name, or `.` for the current directory.
-2. **Template** — Next.js App Router or TanStack Start.
-3. **Multi-language (i18n)** — Choose whether you need built-in internationalization support.
-4. **ViraStack tools** — optional `@virastack/mask`, `@virastack/password`.
+```text
+? Project name (my-app)
+? Template (Next.js App Router | TanStack Start)
+? Multi-language / i18n (Yes | No)
+? ViraStack tools (@virastack/mask, @virastack/password)
+```
 
 ## Tools
 
