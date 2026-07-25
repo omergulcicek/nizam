@@ -236,14 +236,11 @@ export async function runInit(options = {}) {
       }
 
       if (aiOk) {
-        const skillsSpinner = p.spinner();
-        skillsSpinner.start(t("scaffold.skillsInit"));
         try {
           await runCommand("npx", ["--yes", "skills@latest", "add", "emilkowalski/skills"], { cwd: targetDir });
           await runCommand("npx", ["--yes", "skills@latest", "add", "jakubkrehel/make-interfaces-feel-better"], { cwd: targetDir });
-          skillsSpinner.stop(t("scaffold.skillsInitDone"));
         } catch {
-          skillsSpinner.stop(t("scaffold.skillsInitFailed"));
+          // Fail silently, skills are optional
         }
       }
     } else {
