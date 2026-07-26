@@ -27,8 +27,18 @@
 
 ## Quick Start
 
+**Recommended (pnpm):**
+```bash
+pnpm dlx virastack
+```
+
+**Alternatives:**
 ```bash
 npx virastack
+# or
+yarn dlx virastack
+# or
+bunx virastack
 ```
 
 ## What it asks
@@ -77,7 +87,7 @@ Which ViraStack tools would you like to include?
 
 To understand which tools and templates are preferred by the community, ViraStack collects strictly anonymous usage data (template, i18n choice, selected tools, package manager, and CLI version). Absolutely no personal data, project names, or file paths are collected.
 
-Opt out anytime: `npx virastack --telemetry-disable`
+Opt out anytime: `pnpm dlx virastack --telemetry-disable`
 
 ## Contributing
 

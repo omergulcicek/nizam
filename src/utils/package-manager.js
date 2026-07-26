@@ -12,12 +12,12 @@ export function detectPackageManager() {
   return "npm";
 }
 
-export function getInstallArgs() {
-  return ["install"];
+export function getInstallArgs(pm) {
+  return pm === "npm" ? ["install", "--legacy-peer-deps"] : ["install"];
 }
 
 export function getAddArgs(pm, packages) {
-  return pm === "npm" ? ["install", ...packages] : ["add", ...packages];
+  return pm === "npm" ? ["install", "--legacy-peer-deps", ...packages] : ["add", ...packages];
 }
 
 export function getInstallCommand(pm) {

@@ -214,7 +214,7 @@ export async function runInit(options = {}) {
     const installSpinner = p.spinner();
     installSpinner.start(t("scaffold.installing", { pm: packageManager }));
     try {
-      await runCommand(packageManager, getInstallArgs(), { cwd: targetDir });
+      await runCommand(packageManager, getInstallArgs(packageManager), { cwd: targetDir });
       installSpinner.stop(t("scaffold.installDone"));
       installOk = true;
     } catch (error) {

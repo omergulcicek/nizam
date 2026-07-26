@@ -81,8 +81,8 @@ const dictionaries = {
     "add.installFailed": "Failed to add {pkg}.",
 
     help: `Usage:
-  npx virastack [init] [name]   Scaffold a new project
-  npx virastack add <tool>      Add a ViraStack tool to an existing project
+  pnpm dlx virastack [init] [name]   Scaffold a new project
+  pnpm dlx virastack add <tool>      Add a ViraStack tool to an existing project
 
 Tools:
   mask, password, ai
@@ -100,9 +100,9 @@ Options:
   -h, --help            Show this help message
 
 Examples:
-  npx virastack
-  npx virastack my-app --yes
-  npx virastack init my-app --template nextjs --tools mask --yes`,
+  pnpm dlx virastack
+  pnpm dlx virastack my-app --yes
+  pnpm dlx virastack init my-app --template nextjs --tools mask --yes`,
   },
 
   tr: {
@@ -183,8 +183,8 @@ Examples:
     "add.installFailed": "{pkg} eklenemedi.",
 
     help: `Kullanım:
-  npx virastack [init] [ad]     Yeni bir proje oluştur
-  npx virastack add <araç>      Mevcut projeye bir ViraStack aracı ekle
+  pnpm dlx virastack [init] [ad]     Yeni bir proje oluştur
+  pnpm dlx virastack add <araç>      Mevcut projeye bir ViraStack aracı ekle
 
 Araçlar:
   mask, password, ai
@@ -202,9 +202,9 @@ Seçenekler:
   -h, --help            Bu yardım mesajını göster
 
 Örnekler:
-  npx virastack
-  npx virastack my-app --yes
-  npx virastack init my-app --template nextjs --tools mask --yes`,
+  pnpm dlx virastack
+  pnpm dlx virastack my-app --yes
+  pnpm dlx virastack init my-app --template nextjs --tools mask --yes`,
   },
 };
 

@@ -58,7 +58,7 @@ export async function main() {
       await runAdd(rest[0]);
       break;
     default:
-      // `npx virastack my-app --yes` — first token is the project name.
+      // `pnpm dlx virastack my-app --yes` — first token is the project name.
       await runInit(buildInitOptions(flags, command));
   }
 }
