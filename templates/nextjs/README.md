@@ -56,22 +56,11 @@ Production-grade Next.js starter with feature-sliced architecture, strict TypeSc
 
 ## Getting started
 
-**Requirements:** Node.js `>=20.9` · recommended package manager: **pnpm**
+**Quick Start & Setup:** Please follow the instructions in the main [ViraStack Start README](https://github.com/virastack/start#quick-start).
 
-### Scaffold with the CLI (recommended)
-
-```bash
-npx virastack
-cd your-project
-pnpm dev
-```
-
-The CLI installs dependencies and seeds `.env.local` from `.env.example` automatically.
-
-### Use this template directly
+Once your project is scaffolded, start the development server:
 
 ```bash
-pnpm install   # or npm / yarn / bun
 pnpm dev
 ```
 
