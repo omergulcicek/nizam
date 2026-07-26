@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/site.config";
 
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/features/landing/components/Reveal";
 import { ReactIcon, TailwindIcon, TanstackIcon } from "@/features/landing/icons";
@@ -41,14 +42,18 @@ export function Hero() {
         a polished product from day one.
       </p>
 
-      <Reveal mode="mount" delay={0.1} className="mt-2">
+      <Reveal mode="mount" delay={0.1} className="mt-2 flex items-center gap-2">
         <Button
+          className="h-10 px-4 py-2"
           nativeButton={false}
           render={<a href={siteConfig.links.github} target="_blank" rel="noreferrer" />}
         >
           <span>⭐</span>
           <span>Star on GitHub</span>
         </Button>
+        <div className="h-10 w-10 [&>button]:h-full [&>button]:w-full">
+          <ThemeToggle />
+        </div>
       </Reveal>
     </section>
   );

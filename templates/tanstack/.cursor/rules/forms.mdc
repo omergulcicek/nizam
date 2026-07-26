@@ -23,6 +23,20 @@ alwaysApply: false
 - Defining schemas inside component files.
 - Managing form inputs with `useState`.
 
+## Mandatory Patterns
+
+### 1. Server Action Error Handling
+ALWAYS handle Server Action validation errors by mapping them to the form using `setError`.
+
+<example>
+const onSubmit = async (data: FormValues) => {
+  const { error } = await submitAction(data);
+  if (error) {
+    form.setError("root", { message: error });
+  }
+};
+</example>
+
 ## Correct Implementation
 
 <example>

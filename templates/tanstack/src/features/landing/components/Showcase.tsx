@@ -1,8 +1,10 @@
+import { siteConfig } from "@/config/site.config";
 import { CartDemo } from "@/features/landing/components/CartDemo";
 import { ProjectFormDemo } from "@/features/landing/components/ProjectFormDemo";
 import { RevealGroup, RevealItem } from "@/features/landing/components/Reveal";
 import { UsersDemo } from "@/features/landing/components/UsersDemo";
 import { featureCardClassName } from "@/features/landing/helpers";
+import { formatDate } from "@/helpers";
 
 export function Showcase() {
   return (
@@ -48,6 +50,13 @@ export function Showcase() {
           </RevealItem>
         </div>
       </RevealGroup>
+
+      <div className="mt-20 flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground">
+        <p>
+          © {new Date().getFullYear()} {siteConfig.name}. MIT Licensed.
+        </p>
+        <p className="italic">Last built on {formatDate(new Date())}.</p>
+      </div>
     </section>
   );
 }

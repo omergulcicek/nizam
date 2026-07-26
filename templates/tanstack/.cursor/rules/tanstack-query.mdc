@@ -22,6 +22,23 @@ alwaysApply: false
 - Using API responses without validation.
 - Ignoring Loading/Error states.
 
+## Mandatory Patterns
+
+### 1. Query Options Factory (v5)
+NEVER use inline objects in `useQuery` or loaders. ALWAYS define queries externally using the `queryOptions` function.
+
+<example>
+import { queryOptions } from '@tanstack/react-query';
+
+export const userQueryOptions = (id: string) => queryOptions({
+  queryKey: userKeys.detail(id),
+  queryFn: ({ signal }) => fetchUser(id, signal)
+});
+
+// Inside Component or Loader
+const { data } = useQuery(userQueryOptions(id));
+</example>
+
 ## Correct Implementation
 
 <example>

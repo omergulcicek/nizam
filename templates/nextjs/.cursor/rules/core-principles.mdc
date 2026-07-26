@@ -26,6 +26,8 @@ alwaysApply: true
 - **Imports & Aliases:** Use short aliases and barrel exports (`index.ts`). Prefer `@/ui`, `@/hooks`, `@/data`, `@/schemas`, `@/layout`. Avoid long paths like `@/components/ui`.
 - **Exports:** Group exports with `index.ts`.
 - **No Silent Failures:** Do not swallow errors. Manage `try/catch` blocks.
+- **Observability:** Log critical failures to an external service, not just `console.error`.
+- **Resilience:** Wrap feature modules in Error Boundaries to prevent full-page crashes.
 - **Secret Protection:** Do not log `.env` content.
 - **Dependency:** Obtain approval for new packages.
 

@@ -28,6 +28,28 @@ alwaysApply: false
 * **Security:** Forbidden to construct dynamic URLs using unsanitized user inputs.
 * **Architecture:** NEVER make raw HTTP calls (`fetch()` or `axios.get()`) directly inside feature components or hooks. Always use the project's centralized API client/wrapper. No cross-feature API imports, no hardcoded endpoint strings in queries.
 
+## Mandatory Patterns
+
+### 1. Zod Safe Parsing
+NEVER pass raw API data directly to the UI. ALWAYS parse the response using Zod.
+
+<example>
+export const getUser = async (id: string) => {
+  const data = await api.get(`/users/${id}`);
+  return UserSchema.parse(data);
+};
+</example>
+
+### 2. ApiError Normalization
+ALWAYS catch raw HTTP errors and throw a standardized `ApiError` before it reaches the UI.
+
+<example>
+if (!res.ok) {
+  const errorData = await res.json();
+  throw new ApiError(errorData.message || "Fetch failed", res.status, errorData);
+}
+</example>
+
 ## Correct Implementation
 
 <example>

@@ -1,5 +1,3 @@
-import { BotIcon } from "lucide-react";
-
 import {
   ReactHookFormIcon,
   TailwindIcon,
@@ -42,6 +40,6 @@ export const FEATURES = [
     title: "ViraStack AI",
     description:
       "Pre-configured agent context - coding rules, design skills, and AGENTS.md so any AI assistant matches this codebase.",
-    icon: <BotIcon className="size-7 text-primary" />,
+    icon: <img src="/logo.webp" alt="ViraStack AI" className="size-7 object-contain" />,
   },
 ] as const;

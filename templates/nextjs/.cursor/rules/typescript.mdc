@@ -23,8 +23,7 @@ alwaysApply: false
 - `!` (Non-null assertion).
 - Using Interface and Type simultaneously.
 - `I` or `T` prefixes (`IUser`).
-- Type soup (`Pick<Omit<Partial<...>>>`).
-- Type soup (Pick<Omit<Partial<...>>> nesting > 2). 
+- Type soup (`Pick<Omit<Partial<...>>>` nesting > 2). 
   Exception: Deriving Form schemas from API schemas using Zod's `.pick()`, `.omit()`, or `.extend()` is encouraged to maintain SSOT.
 
 ## Correct Implementation

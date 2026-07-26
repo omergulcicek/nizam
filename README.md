@@ -1,6 +1,12 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/virastack/start/main/assets/virastack-start.png" alt="ViraStack Start" height="120" style="max-width: 100%;" />
+<a href="https://github.com/virastack/start" target="_blank" rel="noreferrer">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/virastack/start/main/assets/logo-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/virastack/start/main/assets/logo-light.png">
+    <img src="https://raw.githubusercontent.com/virastack/start/main/assets/logo-light.png" alt="ViraStack Start" height="120" style="max-width: 100%;" />
+  </picture>
+</a>
 
 *Production-grade scaffolding CLI for modern React — integrate ecosystem tools in one command.*
 

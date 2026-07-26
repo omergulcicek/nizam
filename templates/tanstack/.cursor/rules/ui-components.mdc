@@ -28,6 +28,21 @@ alwaysApply: false
 - **UX/A11y:** `div` soup, "Lorem Ipsum", or `onClick` on non-interactive elements without keyboard support.
 - **Logic:** Default exports or data fetching inside atomic components.
 
+## Mandatory Patterns
+
+### 1. Tailwind Class Merging
+NEVER use dynamic string interpolation (`${class1} ${class2}`) for Tailwind classes. ALWAYS use the `cn()` utility function.
+
+<example>
+import { cn } from "@/lib/utils";
+
+export const Button = ({ className, variant }) => (
+  <button className={cn("base-classes", variant === "primary" && "bg-blue-500", className)}>
+    Click
+  </button>
+);
+</example>
+
 ## Correct Implementation
 
 <example>

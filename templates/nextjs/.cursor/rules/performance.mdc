@@ -12,21 +12,21 @@ alwaysApply: false
 - **Performance Budgets:**
     - **Core Web Vitals:** LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.
     - **API & Load:** API response time < 200ms (p95). Time to Interactive (TTI) < 3.5s on 4G connections.
-    - **Bundle Size:** Keep initial feature chunks < 50kb. Enforce dynamic imports (`next/dynamic`) for heavy dependencies.
-- **LCP Optimization:** Use the `priority` attribute for the first visible `Image` (Next.js) or hero assets to prioritize loading.
+    - **Bundle Size:** Keep initial feature chunks < 50kb. Lazy load heavy dependencies.
+- **LCP Optimization:** Prioritize loading the first visible hero assets or images.
 - **Image & Data Standards:**
     - Define explicit `width` and `height` to prevent CLS.
     - Use `<picture>` with `source` tags for complex art direction or resolution switching.
     - Prevent N+1 query patterns; strictly use pagination or optimized includes/joins for all data-driven components.
-- **Icon & Font Strategy:** Use tree-shakable icons (e.g., `lucide-react`). Apply `swap` display strategy for fonts, optimized via `next/font` or local self-hosting.
+- **Icon & Font Strategy:** Use tree-shakable icons (e.g., `lucide-react`). Apply `swap` display strategy for fonts.
 - **A11y SSOT:** All interactive elements MUST have `aria-label`, `role`, or an associated `<label>`. Maintain WCAG AA compliance (4.5:1 contrast ratio).
 - **Asset Links:** Reference `ui-components.mdc` for specific Skeleton and Layout Shift (CLS) implementation rules.
 
 ## Bans
 
 - **Layout Shift:** Forbidden to render content without reserved dimensions (use Skeletons).
-- **Native Img:** Forbidden to use raw `<img>` tags.
-- **Blocking JS:** Forbidden to use heavy 3rd party scripts in the main thread (use `next/script` or Web Workers).
+- **Native Img:** Forbidden to use raw unoptimized `<img>` tags for hero images.
+- **Blocking JS:** Forbidden to use heavy 3rd party scripts in the main thread; defer them.
 - **A11y Gaps:** Forbidden to use `div` as a button without `tabIndex` and `onKeyDown`.
 - **Alt Text:** Forbidden to leave `alt` attributes empty or generic (e.g., "image").
 
@@ -34,17 +34,15 @@ alwaysApply: false
 
 <example>
 // Optimized LCP and A11y
-import Image from "next/image";
-
 export const Hero = () => (
   <section>
     <h1>{t("title")}</h1>
-    <Image 
+    <img 
       src="/hero.webp" 
       alt="Dashboard analytics overview" 
       width={1200} 
       height={600} 
-      priority 
+      fetchpriority="high"
     />
     <button aria-label="Start free trial" onClick={handleAction}>
       {t("cta")}

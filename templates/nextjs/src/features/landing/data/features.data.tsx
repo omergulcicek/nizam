@@ -1,5 +1,3 @@
-import { BotIcon } from "lucide-react";
-
 import {
   NextjsIcon,
   ReactHookFormIcon,
@@ -43,6 +41,7 @@ export const FEATURES = [
     title: "ViraStack AI",
     description:
       "Pre-configured agent context - coding rules, design skills, and AGENTS.md so any AI assistant matches this codebase.",
-    icon: <BotIcon className="size-7 text-primary" />,
+    /* eslint-disable-next-line @next/next/no-img-element */
+    icon: <img src="/logo.webp" alt="ViraStack Logo" className="size-7" />,
   },
 ] as const;

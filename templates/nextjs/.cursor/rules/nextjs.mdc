@@ -26,6 +26,66 @@ alwaysApply: false
 - **"use client" at Root:** Marking `page.tsx` or `layout.tsx` as `"use client"` is FORBIDDEN. Wrap interactive logic in feature components instead.
 - **Raw Serialization:** Forbidden to pass raw database models or sensitive user data directly from RSC to Client Components.
 
+## Mandatory Patterns
+
+### 1. Assets & Performance (Next.js Specifics)
+Use Next.js built-in optimizations for assets. 
+- ALWAYS use `next/image` for images to ensure automatic WebP/AVIF optimization and resizing.
+- ALWAYS use `next/font` for fonts to prevent layout shift (CLS).
+- ALWAYS use `next/script` for third-party scripts to unblock the main thread.
+- Use `next/dynamic` for heavy client-side components that are not immediately visible.
+
+<example>
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const HeavyChart = dynamic(() => import('@/features/charts/components/heavy-chart'), { ssr: false });
+
+export const Hero = () => (
+  <section>
+    <Image 
+      src="/hero.webp" 
+      alt="Dashboard analytics overview" 
+      width={1200} 
+      height={600} 
+      priority 
+    />
+  </section>
+);
+</example>
+
+### 2. RSC Query Hydration
+When using TanStack Query in Next.js, ALWAYS prefetch in RSC and wrap the client in `<HydrationBoundary>`.
+
+<example>
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
+
+export default async function Page() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(userQueryOptions(id));
+
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <UserClientComponent id={id} />
+    </HydrationBoundary>
+  );
+}
+</example>
+
+### 2. Safe Return Pattern
+Server Actions MUST NOT throw raw errors. ALWAYS return a `{ data, error }` object.
+
+<example>
+export async function createUser(data: UserDTO) {
+  try {
+    const result = await db.create(data);
+    return { data: result, error: null };
+  } catch (e) {
+    return { data: null, error: "Failed to create user" };
+  }
+}
+</example>
+
 ## Correct Implementation
 
 <example>

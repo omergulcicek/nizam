@@ -1,10 +1,16 @@
-![ViraStack Next.js](./assets/virastack-nextjs.png)
+<div align="center">
 
-# ViraStack - Next.js Boilerplate
+<a href="https://github.com/virastack/start" target="_blank" rel="noreferrer">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/virastack/start/main/assets/logo-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/virastack/start/main/assets/logo-light.png">
+    <img src="https://raw.githubusercontent.com/virastack/start/main/assets/logo-light.png" alt="ViraStack Start" height="120" style="max-width: 100%;" />
+  </picture>
+</a>
 
-**The Next.js boilerplate that feels effortless.**
+# ViraStack Start — Next.js Edition
 
-Next.js 16 · React 19 · Tailwind CSS 4 · Base UI · TypeScript strict · Agent-ready
+*The Next.js boilerplate that feels effortless.*
 
 [![ViraStack Next.js](https://img.shields.io/badge/ViraStack-Next.js-%2300bba7)](https://virastack.com)
 [![npm version](https://img.shields.io/npm/v/virastack)](https://www.npmjs.com/package/virastack)
@@ -13,6 +19,8 @@ Next.js 16 · React 19 · Tailwind CSS 4 · Base UI · TypeScript strict · Agen
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/virastack/start/actions/workflows/ci.yml/badge.svg)](https://github.com/virastack/start/actions/workflows/ci.yml)
 [![X @virastack](https://img.shields.io/badge/X-@virastack-black?logo=x)](https://x.com/virastack)
+
+</div>
 
 ---
 

@@ -30,8 +30,11 @@ alwaysApply: false
 
 <example>
 ```tsx
-const stableHandler = useEvent(handler);
-useEffect(() => { stableHandler(data); }, [data]);
+// Derived state instead of syncing props to state
+const Component = ({ items }) => {
+  const activeItems = items.filter(i => i.isActive); // Good
+  return <div>{activeItems.length}</div>;
+};
 ```
 </example>
 

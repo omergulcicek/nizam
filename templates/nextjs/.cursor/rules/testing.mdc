@@ -18,7 +18,26 @@ alwaysApply: false
 - **Location:** Keep `.test.ts` next to implementation.
 - **Snapshots:** Use only for small, static data structures to prevent maintenance hell.
 
-## Correct Approach
+## Mandatory Patterns
+
+### 1. Async UI Testing (AAA Pattern)
+ALWAYS use `userEvent` for interactions and `findBy*` for async assertions. Mock APIs via MSW.
+
+<example>
+it('should display error on failed login', async () => {
+  // Arrange
+  server.use(http.post('/api/login', () => HttpResponse.json(null, { status: 401 })));
+  render(<LoginForm />);
+
+  // Act
+  await userEvent.click(screen.getByRole('button', { name: /login/i }));
+
+  // Assert
+  expect(await screen.findByText(/invalid credentials/i)).toBeInTheDocument();
+});
+</example>
+
+## Correct Implementation
 <example>
 it('should calculate discount correctly', () => {
   const result = calculateTotal({ price: 100, discount: 20 }); 

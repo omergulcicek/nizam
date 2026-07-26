@@ -31,6 +31,24 @@ alwaysApply: false
 - **Untyped Routes:** Navigating via string paths without type-safety (using `Link` or `Maps` without the `to` property pointing to a valid route) is FORBIDDEN.
 - **Insecure Env Vars:** Forbidden to store secrets or private keys in environment variables with `VITE_` prefixes.
 
+## Mandatory Patterns
+
+### 1. Safe Return Pattern
+ServerFn MUST NOT throw raw errors. ALWAYS return a `{ data, error }` object.
+
+<example>
+export const loginFn = createServerFn({ method: 'POST' })
+  .validator(z.object({ email: z.string().email() }))
+  .handler(async ({ data }) => {
+    try {
+      const result = await auth(data);
+      return { data: result, error: null };
+    } catch (e) {
+      return { data: null, error: "Login failed" };
+    }
+  });
+</example>
+
 ## Correct Implementation
 
 <example>
