@@ -10,7 +10,7 @@
 
 # ViraStack Start — Next.js Edition
 
-*The Next.js boilerplate that feels effortless.*
+_The Next.js boilerplate that feels effortless._
 
 [![ViraStack Next.js](https://img.shields.io/badge/ViraStack-Next.js-%2300bba7)](https://virastack.com)
 [![npm version](https://img.shields.io/npm/v/virastack)](https://www.npmjs.com/package/virastack)
