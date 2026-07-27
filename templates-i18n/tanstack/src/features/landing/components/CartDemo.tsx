@@ -1,6 +1,7 @@
 "use client";
 
 import { MinusIcon, PlusIcon, ShirtIcon, Trash2Icon } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useCounterStore } from "@/features/landing/stores";
 import * as m from "@/paraglide/messages.js";

@@ -1,10 +1,12 @@
 "use client";
 
 import type { ReactNode } from "react";
+
 import { RefreshCwIcon, SearchIcon } from "lucide-react";
 import { parseAsString, useQueryState } from "nuqs";
 
 import { ApiError } from "@/lib/api";
+
 import {
   Avatar,
   AvatarFallback,

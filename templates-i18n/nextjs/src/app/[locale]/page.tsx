@@ -1,4 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
+
 import { LandingPage } from "@/features/landing";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

@@ -21,7 +21,12 @@ export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className={`${inter.variable} h-full`}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body className="flex min-h-full flex-col antialiased" suppressHydrationWarning>
         <NuqsAdapter>
           <Providers>{children}</Providers>

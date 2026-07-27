@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
-import { getMessages, setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
 
-import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { defaultMetadata } from "@/config/seo.config";
 
 import { Providers } from "@/providers";
+
+import { routing } from "@/i18n/routing";
 
 import "@/styles/tailwind.css";
 
@@ -23,16 +24,16 @@ const inter = Inter({
 
 export const metadata: Metadata = defaultMetadata;
 
-export default async function RootLayout({ 
-  children, 
-  params 
-}: Readonly<{ 
-  children: React.ReactNode, 
-  params: Promise<{ locale: string }> 
+export default async function RootLayout({
+  children,
+  params,
+}: Readonly<{
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as "en" | "tr")) {
     notFound();
   }
 
@@ -41,7 +42,12 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} h-full`} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang={locale}
+      className={`${inter.variable} h-full`}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body className="flex min-h-full flex-col antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <NuqsAdapter>

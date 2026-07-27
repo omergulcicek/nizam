@@ -1,8 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-
 import { MinusIcon, PlusIcon, ShirtIcon, Trash2Icon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { useCounterStore } from "@/features/landing/stores";
@@ -21,12 +20,12 @@ export function CartDemo() {
           <ShirtIcon className="size-6" />
         </div>
         <div className="flex flex-1 flex-col">
-          <h5 className="font-medium text-foreground">{t('cart_item_name')}</h5>
-          <p className="text-sm text-muted-foreground">{t('cart_item_variant')}</p>
+          <h5 className="font-medium text-foreground">{t("cart_item_name")}</h5>
+          <p className="text-sm text-muted-foreground">{t("cart_item_variant")}</p>
         </div>
         <div className="flex flex-col items-end gap-1">
           <span className="font-semibold text-foreground">{count * 350}</span>
-          <span className="text-xs text-muted-foreground">{t('cart_item_total')}</span>
+          <span className="text-xs text-muted-foreground">{t("cart_item_total")}</span>
         </div>
       </div>
 
@@ -61,7 +60,7 @@ export function CartDemo() {
           disabled={count === 0}
         >
           <Trash2Icon className="size-3.5" />
-          <span className="text-xs">{t('cart_clear')}</span>
+          <span className="text-xs">{t("cart_clear")}</span>
         </Button>
       </div>
     </div>

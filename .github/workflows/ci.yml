@@ -48,5 +48,8 @@ jobs:
       - name: Knip
         run: pnpm run knip
 
+      - name: Prepare environment
+        run: cp .env.example .env.local
+
       - name: Build
         run: pnpm run build

@@ -1,1 +1,1 @@
-export { projectSchema, type ProjectInput } from "@/features/landing/schemas/project.schema";
+export { getProjectSchema, type ProjectInput } from "@/features/landing/schemas/project.schema";

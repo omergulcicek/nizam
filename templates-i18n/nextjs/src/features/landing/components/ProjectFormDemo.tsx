@@ -1,7 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -25,14 +25,14 @@ export function ProjectFormDemo() {
 
   async function onSubmit(values: ProjectInput) {
     await new Promise((resolve) => setTimeout(resolve, 600));
-    toast.success(t('project_success', { name: values.name }));
+    toast.success(t("project_success", { name: values.name }));
     reset();
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-4">
       <div className="flex flex-col gap-2.5 text-left">
-        <Label htmlFor="name">{t('project_label')}</Label>
+        <Label htmlFor="name">{t("project_label")}</Label>
         <Controller
           control={control}
           name="name"
@@ -40,7 +40,7 @@ export function ProjectFormDemo() {
             <Input
               id="name"
               type="text"
-              placeholder={t('project_placeholder')}
+              placeholder={t("project_placeholder")}
               aria-invalid={!!errors.name}
               value={field.value}
               onChange={(event) => field.onChange(event.target.value)}
@@ -52,12 +52,12 @@ export function ProjectFormDemo() {
         {errors.name ? (
           <FieldError>{errors.name.message}</FieldError>
         ) : (
-          <FieldDescription>{t('project_desc')}</FieldDescription>
+          <FieldDescription>{t("project_desc")}</FieldDescription>
         )}
       </div>
 
       <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? t('project_submitting') : t('project_submit')}
+        {isSubmitting ? t("project_submitting") : t("project_submit")}
       </Button>
     </form>
   );

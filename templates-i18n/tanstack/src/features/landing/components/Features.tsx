@@ -1,9 +1,9 @@
 import { RevealGroup, RevealItem } from "@/features/landing/components/Reveal";
 import { featureCardClassName } from "@/features/landing/helpers";
 import {
-  TanstackIcon,
   ReactHookFormIcon,
   TailwindIcon,
+  TanstackIcon,
   TypescriptIcon,
 } from "@/features/landing/icons";
 import * as m from "@/paraglide/messages.js";
@@ -38,7 +38,6 @@ export function Features() {
     {
       title: m.feature_6_title(),
       description: m.feature_6_desc(),
-      /* eslint-disable-next-line jsx-a11y/alt-text */
       icon: <img src="/logo.webp" alt="ViraStack Logo" className="size-7" />,
     },
   ];
@@ -47,7 +46,9 @@ export function Features() {
     <section id="features" className="mx-auto max-w-5xl px-6 py-16">
       <RevealGroup className="mb-16 text-center">
         <RevealItem>
-          <h2 className="text-3xl font-semibold tracking-tight text-balance">{m.features_title()}</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-balance">
+            {m.features_title()}
+          </h2>
         </RevealItem>
         <RevealItem>
           <p className="mx-auto mt-3 max-w-xl text-base text-balance text-muted-foreground">

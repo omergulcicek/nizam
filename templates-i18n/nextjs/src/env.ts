@@ -14,7 +14,7 @@ const serverSchema = z.object({
 
 const clientSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3000"),
-  NEXT_PUBLIC_APP_NAME: z.string().min(1),
+  NEXT_PUBLIC_APP_NAME: z.string().min(1).default("ViraStack Start - Next.js Edition"),
 });
 
 const serverParsed = serverSchema.safeParse({

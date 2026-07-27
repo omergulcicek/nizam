@@ -13,7 +13,7 @@ const serverSchema = z.object({
 
 const clientSchema = z.object({
   VITE_APP_URL: z.string().url().default("http://localhost:3000"),
-  VITE_APP_NAME: z.string().min(1),
+  VITE_APP_NAME: z.string().min(1).default("ViraStack Start - TanStack Edition"),
 });
 
 function readEnv(key: string): string | undefined {

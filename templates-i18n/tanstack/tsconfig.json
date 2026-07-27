@@ -8,6 +8,7 @@
     "types": ["vite/client"],
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "allowJs": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
     "skipLibCheck": true,

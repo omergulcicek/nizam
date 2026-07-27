@@ -1,9 +1,7 @@
-import { Link } from "@tanstack/react-router";
-
 import { siteConfig } from "@/config/site.config";
 
-import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/features/landing/components/Reveal";
 import { ReactIcon, TailwindIcon, TanstackIcon } from "@/features/landing/icons";

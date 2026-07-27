@@ -1,9 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
 import { RefreshCwIcon, SearchIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { parseAsString, useQueryState } from "nuqs";
 
 import { ApiError } from "@/lib/api";
@@ -41,11 +41,11 @@ export function UsersDemo() {
 
   const header = (
     <div className="mb-4">
-      <h4 className="text-base font-semibold text-foreground md:text-lg">{t('users_title')}</h4>
+      <h4 className="text-base font-semibold text-foreground md:text-lg">{t("users_title")}</h4>
       <p className="mt-1 text-sm text-pretty text-muted-foreground">
-        {t.rich('users_desc', {
+        {t.rich("users_desc", {
           tanstack: (chunks) => <span className="font-semibold text-foreground">{chunks}</span>,
-          nuqs: (chunks) => <span className="font-semibold text-foreground">{chunks}</span>
+          nuqs: (chunks) => <span className="font-semibold text-foreground">{chunks}</span>,
         })}
       </p>
     </div>
@@ -57,7 +57,7 @@ export function UsersDemo() {
         <SearchIcon className="absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2 text-muted-foreground" />
         <Input
           type="search"
-          placeholder={t('users_search')}
+          placeholder={t("users_search")}
           className="h-8 w-full bg-background/50 pl-8 text-xs"
           value={search}
           onChange={(event) => setSearch(event.target.value || null)}
@@ -71,7 +71,7 @@ export function UsersDemo() {
         disabled={isFetching || isLoading}
       >
         <RefreshCwIcon className={`size-3 ${isFetching ? "animate-spin" : ""}`} />
-        {isFetching ? t('users_refreshing') : t('users_refresh')}
+        {isFetching ? t("users_refreshing") : t("users_refresh")}
       </Button>
     </div>
   );
@@ -91,8 +91,8 @@ export function UsersDemo() {
           <>
             <TableHeader className="bg-muted/40">
               <TableRow className="hover:bg-transparent">
-                <TableHead className="h-9 px-3 text-xs">{t('users_col_user')}</TableHead>
-                <TableHead className="h-9 px-3 text-right text-xs">{t('users_col_city')}</TableHead>
+                <TableHead className="h-9 px-3 text-xs">{t("users_col_user")}</TableHead>
+                <TableHead className="h-9 px-3 text-right text-xs">{t("users_col_city")}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -122,8 +122,8 @@ export function UsersDemo() {
   if (isError) {
     const message =
       error instanceof ApiError
-        ? t('users_error_status', { status: error.status })
-        : t('users_error_network');
+        ? t("users_error_status", { status: error.status })
+        : t("users_error_network");
 
     return (
       <div className="flex h-full min-h-0 flex-col">
@@ -150,15 +150,15 @@ export function UsersDemo() {
         <>
           <TableHeader className="bg-muted/40">
             <TableRow className="hover:bg-transparent">
-              <TableHead className="h-9 px-3 text-xs">{t('users_col_user')}</TableHead>
-              <TableHead className="h-9 px-3 text-right text-xs">{t('users_col_city')}</TableHead>
+              <TableHead className="h-9 px-3 text-xs">{t("users_col_user")}</TableHead>
+              <TableHead className="h-9 px-3 text-right text-xs">{t("users_col_city")}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredData?.length === 0 ? (
               <TableRow className="hover:bg-transparent">
                 <TableCell colSpan={2} className="py-8 text-center text-sm text-muted-foreground">
-                  {t('users_empty')}
+                  {t("users_empty")}
                 </TableCell>
               </TableRow>
             ) : (

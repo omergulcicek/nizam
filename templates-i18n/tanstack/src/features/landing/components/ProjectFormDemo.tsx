@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { FieldDescription, FieldError } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getProjectSchema, type ProjectInput } from "@/features/landing/schemas/project.schema";
+import type { ProjectInput } from "@/features/landing/schemas/project.schema";
+import { getProjectSchema } from "@/features/landing/schemas/project.schema";
 import * as m from "@/paraglide/messages.js";
 
 export function ProjectFormDemo() {

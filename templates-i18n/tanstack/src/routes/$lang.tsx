@@ -1,4 +1,5 @@
-import { createFileRoute, Outlet, notFound, redirect } from "@tanstack/react-router";
+import { createFileRoute, notFound, Outlet, redirect } from "@tanstack/react-router";
+
 import { baseLocale, locales, setLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/$lang")({
