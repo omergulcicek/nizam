@@ -27,10 +27,6 @@ jobs:
           - templates-i18n/nextjs
           - templates-i18n/tanstack
 
-    defaults:
-      run:
-        working-directory: ${{ matrix.template }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,44 +35,41 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10
+          run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          cache: pnpm
+          cache-dependency-path: ${{ matrix.template }}/pnpm-lock.yaml
 
       - name: Install dependencies
+        working-directory: ${{ matrix.template }}
         run: pnpm install --frozen-lockfile
 
       - name: Generate Paraglide
         if: contains(matrix.template, 'i18n/tanstack')
+        working-directory: ${{ matrix.template }}
         run: pnpm exec paraglide-js compile --project ./project.inlang
 
       - name: Typecheck
+        working-directory: ${{ matrix.template }}
         run: pnpm run typecheck
 
       - name: Lint
+        working-directory: ${{ matrix.template }}
         run: pnpm run lint:ci
 
       - name: Knip
+        working-directory: ${{ matrix.template }}
         run: pnpm run knip
 
       - name: Prepare environment
+        working-directory: ${{ matrix.template }}
         run: cp .env.example .env.local
 
       - name: Build
+        working-directory: ${{ matrix.template }}
         run: pnpm run build
+
