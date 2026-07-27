@@ -11,10 +11,10 @@ import { seoHeadMeta } from "@/config/seo.config";
 import appCss from "@/styles/tailwind.css?url";
 
 import { Providers } from "@/providers";
+import TanStackQueryDevtools from "@/providers/devtools";
 
 import { DefaultCatchBoundary } from "@/components/shared/DefaultCatchBoundary";
 import { NotFound } from "@/components/shared/NotFound";
-import TanStackQueryDevtools from "@/integrations/tanstack-query/devtools";
 import { getLocale } from "@/paraglide/runtime.js";
 
 interface RouterContext {

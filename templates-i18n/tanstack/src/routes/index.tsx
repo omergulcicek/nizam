@@ -1,17 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { Pending } from "@/components/shared/Pending";
-import { LandingPage } from "@/features/landing";
-import { baseLocale, setLocale } from "@/paraglide/runtime.js";
+import { baseLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
-    setLocale(baseLocale, { reload: false });
+    // Geçici olarak as-needed kapatıldı. Ana sayfa /en adresine yönlendiriliyor.
+    throw redirect({
+      to: "/$lang",
+      params: { lang: baseLocale },
+    });
   },
-  pendingComponent: Pending,
-  component: Home,
 });
-
-function Home() {
-  return <LandingPage />;
-}

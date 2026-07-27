@@ -27,7 +27,7 @@
 
 - **Interactive CLI:** Interactive prompts for template selection, project naming, and ecosystem tool integration.
 - **Production-Ready Foundations:** Scaffolds Next.js or TanStack Start projects with pre-configured feature-sliced architecture.
-- **Built-in AI Protocols:** Integrates `@virastack/ai` automatically — architecture rules, `AGENTS.md`, and design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better) — giving your coding agents a strict "constitution" from day one.
+- **Built-in AI Protocols:** Integrates [ViraStack AI](https://github.com/virastack/ai) automatically — architecture rules, `AGENTS.md`, and design skills from [**Emil Kowalski**](https://github.com/emilkowalski/skills) and [**Jakub Krehel**](https://github.com/jakubkrehel/make-interfaces-feel-better) — giving your coding agents a strict "constitution" from day one.
 - **End-to-End Type Safety:** Strict TypeScript rules, Zod validation, and native package manager alignment (pnpm, npm, yarn, bun).
 - **Ecosystem Integration:** Add optional ViraStack tools (`@virastack/mask`, `@virastack/password`) seamlessly.
 
