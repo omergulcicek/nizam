@@ -46,13 +46,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.local/share/pnpm/store
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles(format('{0}/pnpm-lock.yaml', matrix.template)) }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles(format('{0}/package.json', matrix.template)) }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         working-directory: ${{ matrix.template }}
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Generate Paraglide
         if: contains(matrix.template, 'i18n/tanstack')
