@@ -1,6 +1,6 @@
 /** @type {import('knip').KnipConfig} */
 const config = {
-  entry: ["src/router.tsx", "src/start.ts", "src/routes/**/*.{ts,tsx}"],
+  entry: ["src/router.tsx", "src/start.ts", "src/server.ts", "src/routes/**/*.{ts,tsx}"],
   project: ["src/**/*.{ts,tsx,js,jsx}"],
   ignore: [
     "src/components/ui/**",
@@ -9,6 +9,10 @@ const config = {
     "src/stores/index.ts",
     "src/schemas/index.ts",
     "src/constants/index.ts",
+    // Domain-layer barrels
+    "src/features/**/data/index.ts",
+    "src/features/**/data/*.data.tsx",
+    "src/features/**/schemas/index.ts",
   ],
   ignoreDependencies: ["tailwindcss", "tw-animate-css"],
   rules: {
