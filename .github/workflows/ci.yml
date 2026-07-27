@@ -4,21 +4,32 @@ on:
   push:
     branches: [main, master]
     paths:
-      - "templates/nextjs/**"
+      - "templates/**"
+      - "templates-i18n/**"
       - ".github/workflows/ci.yml"
   pull_request:
     branches: [main, master]
     paths:
-      - "templates/nextjs/**"
+      - "templates/**"
+      - "templates-i18n/**"
       - ".github/workflows/ci.yml"
 
-defaults:
-  run:
-    working-directory: templates/nextjs
-
 jobs:
-  build:
+  templates:
+    name: Template CI (${{ matrix.template }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        template:
+          - templates/nextjs
+          - templates/tanstack
+          - templates-i18n/nextjs
+          - templates-i18n/tanstack
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.template }}
 
     steps:
       - name: Checkout
@@ -34,10 +45,14 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          cache-dependency-path: templates/nextjs/pnpm-lock.yaml
+          cache-dependency-path: ${{ matrix.template }}/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Generate Paraglide
+        if: contains(matrix.template, 'i18n/tanstack')
+        run: pnpm exec paraglide-js compile --project ./project.inlang
 
       - name: Typecheck
         run: pnpm run typecheck
