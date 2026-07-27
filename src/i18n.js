@@ -22,9 +22,9 @@ const dictionaries = {
 
     "template.message": "Which template would you like to use?",
     "template.nextjs.label": "Next.js App Router",
-    "template.nextjs.hint": "Recommended",
+    "template.nextjs.hint": "App Router + Server Components",
     "template.tanstack.label": "TanStack Start",
-    "template.tanstack.hint": "File-based routing + SSR",
+    "template.tanstack.hint": "Type-safe routing + SSR",
     "template.tanstack.notReady":
       "The TanStack Start template isn't available in this install. Using Next.js instead.",
     "template.errorInvalid":
@@ -125,9 +125,9 @@ Examples:
 
     "template.message": "Hangi şablonla başlamak istiyorsunuz?",
     "template.nextjs.label": "Next.js App Router",
-    "template.nextjs.hint": "Önerilen",
+    "template.nextjs.hint": "App Router + Server Components",
     "template.tanstack.label": "TanStack Start",
-    "template.tanstack.hint": "Dosya tabanlı routing + SSR",
+    "template.tanstack.hint": "Type-safe routing + SSR",
     "template.tanstack.notReady":
       "Bu kurulumda TanStack Start şablonu yok. Next.js kullanılacak.",
     "template.errorInvalid":

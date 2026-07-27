@@ -1,6 +1,16 @@
 # Changelog
-
-## [v1.0.0] - 2026-07-27
+    
+    ## [v1.0.1] - 2026-07-27
+    
+    ### Fixed & Improved
+    
+    - **Skills Installation**: Updated `skills` CLI commands to install non-interactively (`-y`) and target specific skills correctly (`--skill emil-design-eng`).
+    - **Gitignore Handling**: Templates now use `_gitignore` which is automatically renamed to `.gitignore` during scaffolding. This prevents npm from stripping the file during publish.
+    - **CLI Prompts**: Updated template descriptions to be more accurate and fair:
+      - Next.js: "App Router + Server Components"
+      - TanStack Start: "Type-safe routing + SSR"
+    
+    ## [v1.0.0] - 2026-07-27
 
 ### Initial Release
 

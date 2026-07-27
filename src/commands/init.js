@@ -237,8 +237,8 @@ export async function runInit(options = {}) {
 
       if (aiOk) {
         try {
-          await runCommand("npx", ["--yes", "skills@latest", "add", "emilkowalski/skills"], { cwd: targetDir });
-          await runCommand("npx", ["--yes", "skills@latest", "add", "jakubkrehel/make-interfaces-feel-better"], { cwd: targetDir });
+          await runCommand("npx", ["--yes", "skills@latest", "add", "emilkowalski/skills", "--skill", "emil-design-eng", "-y"], { cwd: targetDir });
+          await runCommand("npx", ["--yes", "skills@latest", "add", "jakubkrehel/make-interfaces-feel-better", "-y"], { cwd: targetDir });
         } catch {
           p.log.warn(t("scaffold.skillsInitFailed"));
         }

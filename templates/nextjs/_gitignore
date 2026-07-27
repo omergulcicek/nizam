@@ -11,15 +11,9 @@
 # testing
 /coverage
 
-# build / framework
-/dist
-/dist-ssr
-.nitro
-.tanstack
-.wrangler
-.output
-.vinxi
-__unconfig*
+# next.js
+/.next/
+/out/
 
 # production
 /build
@@ -27,8 +21,6 @@ __unconfig*
 # misc
 .DS_Store
 *.pem
-*.local
-todos.json
 
 # debug
 npm-debug.log*
@@ -36,7 +28,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files
 .env*
 !.env.example
 
@@ -45,7 +37,9 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
-# eslint / knip
+# cache / tooling
 .eslintcache
 .knip
+.turbo

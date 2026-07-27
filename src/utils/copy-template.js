@@ -50,7 +50,8 @@ export async function copyTemplate(srcDir, destDir) {
     if (shouldIgnore(entry.name)) continue;
 
     const srcPath = path.join(srcDir, entry.name);
-    const destPath = path.join(destDir, entry.name);
+    const destName = entry.name === "_gitignore" ? ".gitignore" : entry.name;
+    const destPath = path.join(destDir, destName);
 
     if (entry.isDirectory()) {
       await copyTemplate(srcPath, destPath);
