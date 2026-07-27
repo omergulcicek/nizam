@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { findTool } from "./tools.js";
 import { toPackageName } from "./validate-project-name.js";
+import { getCliVersion } from "./package-info.js";
 
 /**
  * Rewrites the scaffolded package.json: gives it the user's project name
@@ -20,12 +21,16 @@ export async function updatePackageJson(targetDir, { projectName, tools }) {
   }
 
   pkg.name = toPackageName(projectName);
-  pkg.version = "0.1.0";
+  pkg.version = "1.0.0"; // Scaffolded project's own initial version
   delete pkg.author;
   delete pkg.repository;
   delete pkg.bugs;
   delete pkg.homepage;
   delete pkg.keywords;
+
+  if (pkg.virastack) {
+    pkg.virastack.version = getCliVersion();
+  }
 
   pkg.dependencies = pkg.dependencies ?? {};
   for (const toolId of tools) {

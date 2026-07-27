@@ -63,6 +63,8 @@ const dictionaries = {
       "Failed to configure ViraStack AI rules.",
     "scaffold.aiInitSkipped":
       "Skipping AI setup because dependency install failed.",
+    "scaffold.skillsInitFailed":
+      "Design skills could not be installed. Run manually: npx skills@latest add emilkowalski/skills && npx skills@latest add jakubkrehel/make-interfaces-feel-better",
 
     "done.title": "You're all set!",
     "done.partialTitle": "Project files are ready — finish setup manually:",
@@ -164,6 +166,8 @@ Examples:
       "ViraStack AI kuralları yapılandırılamadı.",
     "scaffold.aiInitSkipped":
       "Bağımlılık kurulumu başarısız olduğu için AI yapılandırması atlandı.",
+    "scaffold.skillsInitFailed":
+      "Tasarım skill'leri kurulamadı. Manuel çalıştırın: npx skills@latest add emilkowalski/skills && npx skills@latest add jakubkrehel/make-interfaces-feel-better",
 
     "done.title": "Her şey hazır!",
     "done.partialTitle": "Proje dosyaları hazır — kurulumu manuel tamamlayın:",

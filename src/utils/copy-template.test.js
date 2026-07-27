@@ -9,6 +9,7 @@ describe("shouldIgnore", () => {
     expect(shouldIgnore(".output")).toBe(true);
     expect(shouldIgnore("node_modules")).toBe(true);
     expect(shouldIgnore("pnpm-lock.yaml")).toBe(true);
+    expect(shouldIgnore("skills-lock.json")).toBe(true);
     expect(shouldIgnore("coverage")).toBe(true);
   });
 

@@ -19,6 +19,9 @@ export function Hero() {
       <h1 className="mb-2 text-center text-4xl lg:text-6xl">
         <span className="font-black text-primary">ViraStack</span>{" "}
         <span className="font-medium text-teal-500 italic">Start</span>
+        <span className="mt-2 block text-lg font-normal text-muted-foreground lg:text-xl">
+          Next.js Edition
+        </span>
       </h1>
 
       <p className="max-w-2xl text-base leading-relaxed text-balance text-muted-foreground sm:text-lg">

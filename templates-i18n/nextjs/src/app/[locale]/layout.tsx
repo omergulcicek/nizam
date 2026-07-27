@@ -1,0 +1,54 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { notFound } from "next/navigation";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+
+import { routing } from "@/i18n/routing";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+
+import { defaultMetadata } from "@/config/seo.config";
+
+import { Providers } from "@/providers";
+
+import "@/styles/tailwind.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+});
+
+export const metadata: Metadata = defaultMetadata;
+
+export default async function RootLayout({ 
+  children, 
+  params 
+}: Readonly<{ 
+  children: React.ReactNode, 
+  params: Promise<{ locale: string }> 
+}>) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale} className={`${inter.variable} h-full`} suppressHydrationWarning data-scroll-behavior="smooth">
+      <body className="flex min-h-full flex-col antialiased" suppressHydrationWarning>
+        <NextIntlClientProvider messages={messages}>
+          <NuqsAdapter>
+            <Providers>{children}</Providers>
+          </NuqsAdapter>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

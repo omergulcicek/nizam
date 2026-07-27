@@ -26,9 +26,9 @@ export async function initGitRepo(dir) {
       env: {
         ...process.env,
         GIT_AUTHOR_NAME: "ViraStack Start",
-        GIT_AUTHOR_EMAIL: "cli@virastack.com",
+        GIT_AUTHOR_EMAIL: "noreply@virastack.com",
         GIT_COMMITTER_NAME: "ViraStack Start",
-        GIT_COMMITTER_EMAIL: "cli@virastack.com",
+        GIT_COMMITTER_EMAIL: "noreply@virastack.com",
       },
     });
     return true;

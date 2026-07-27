@@ -240,7 +240,7 @@ export async function runInit(options = {}) {
           await runCommand("npx", ["--yes", "skills@latest", "add", "emilkowalski/skills"], { cwd: targetDir });
           await runCommand("npx", ["--yes", "skills@latest", "add", "jakubkrehel/make-interfaces-feel-better"], { cwd: targetDir });
         } catch {
-          // Fail silently, skills are optional
+          p.log.warn(t("scaffold.skillsInitFailed"));
         }
       }
     } else {

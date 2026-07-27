@@ -54,10 +54,12 @@ export function Showcase() {
       </RevealGroup>
 
       <div className="mt-20 flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground">
-        <p>
+        <p suppressHydrationWarning>
           © {new Date().getFullYear()} {siteConfig.name}. MIT Licensed.
         </p>
-        <p className="italic">Last built on {formatDate(new Date())}.</p>
+        <p className="italic" suppressHydrationWarning>
+          Last built on {formatDate(new Date())}.
+        </p>
       </div>
     </section>
   );

@@ -12,19 +12,19 @@ export const TOOLS = [
     id: "mask",
     package: "@virastack/mask",
     kind: "dependency",
-    version: "^1.0.0",
+    version: "latest",
   },
   {
     id: "password",
     package: "@virastack/password",
     kind: "dependency",
-    version: "^1.0.0",
+    version: "latest",
   },
   {
     id: "ai",
     package: "@virastack/ai",
     kind: "postinstall-cli",
-    version: "^1.2.2",
+    version: "latest",
     hiddenFromInit: true,
   },
 ];

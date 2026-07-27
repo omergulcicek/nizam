@@ -28,6 +28,7 @@ const IGNORED_ENTRIES = new Set([
   "yarn.lock",
   "bun.lock",
   "bun.lockb",
+  "skills-lock.json",
   ".gitkeep",
   "assets",
 ]);

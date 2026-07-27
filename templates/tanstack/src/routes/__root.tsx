@@ -57,7 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="flex min-h-full flex-col font-sans antialiased">
+      <body className="flex min-h-full flex-col font-sans antialiased" suppressHydrationWarning>
         {children}
         {import.meta.env.DEV ? (
           <TanStackDevtools
