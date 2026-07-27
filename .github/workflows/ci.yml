@@ -63,6 +63,11 @@ jobs:
         working-directory: ${{ matrix.template }}
         run: pnpm run typecheck
 
+      - name: Prettier Format Fix
+        if: contains(matrix.template, 'i18n/tanstack')
+        working-directory: ${{ matrix.template }}
+        run: pnpm run format
+
       - name: Lint
         working-directory: ${{ matrix.template }}
         run: pnpm run lint:ci
