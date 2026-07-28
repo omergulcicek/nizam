@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.0.3] - 2026-07-28
+
+### Fixed & Improved
+
+- **i18n Static Params**: Added `generateStaticParams` to the Next.js i18n `[locale]` layout per [next-intl routing setup](https://next-intl.dev/docs/routing/setup), so locale segments (`en`, `tr`) are known at build/dev time.
+
 ## [v1.0.2] - 2026-07-28
 
 ### Fixed & Improved
