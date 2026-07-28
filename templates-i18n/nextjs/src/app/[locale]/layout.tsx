@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { defaultMetadata } from "@/config/seo.config";
@@ -37,13 +37,11 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "tr")) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   setRequestLocale(locale);
-
-  const messages = await getMessages();
 
   return (
     <html
@@ -53,7 +51,7 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="flex min-h-full flex-col antialiased" suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider>
           <NuqsAdapter>
             <Providers>{children}</Providers>
           </NuqsAdapter>

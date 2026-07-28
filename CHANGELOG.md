@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.0.4] - 2026-07-28
+
+### Fixed & Improved
+
+- **Next.js Proxy**: Next.js i18n template now exports `createMiddleware(routing)` directly, matching [next-intl](https://next-intl.dev/docs/routing/setup).
+- **i18n Locale Checks**: Replaced `includes` + cast with `hasLocale` in `[locale]` layout and `i18n/request.ts`.
+- **i18n Messages**: Dropped manual `getMessages()`; `NextIntlClientProvider` inherits messages from `i18n/request.ts` (next-intl 4+).
+- **i18n Error Routes**: Added root `app/layout.tsx` + `app/not-found.tsx`, and `[locale]/[...rest]` catch-all per [next-intl error files](https://next-intl.dev/docs/environments/error-files).
+- **React Compiler**: Both Next.js templates enable `reactCompiler` only in production to keep local `next dev` lighter.
+
 ## [v1.0.3] - 2026-07-28
 
 ### Fixed & Improved

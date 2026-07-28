@@ -1,16 +1,9 @@
-import type { NextRequest } from "next/server";
-
 import createMiddleware from "next-intl/middleware";
 
 import { routing } from "./i18n/routing";
 
-const handleI18nRouting = createMiddleware(routing);
-
-export default async function proxy(request: NextRequest) {
-  return handleI18nRouting(request);
-}
+export default createMiddleware(routing);
 
 export const config = {
-  // Match all pathnames except for api, trpc, _next, _vercel, and static files
   matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 };
