@@ -1,14 +1,21 @@
 # Changelog
-    
-    ## [v1.0.1] - 2026-07-27
-    
-    ### Fixed & Improved
-    
-    - **Skills Installation**: Updated `skills` CLI commands to install non-interactively (`-y`) and target specific skills correctly (`--skill emil-design-eng`).
-    - **Gitignore Handling**: Templates now use `_gitignore` which is automatically renamed to `.gitignore` during scaffolding. This prevents npm from stripping the file during publish.
-    - **CLI Prompts**: Updated template descriptions to be more accurate and fair:
-      - Next.js: "App Router + Server Components"
-      - TanStack Start: "Type-safe routing + SSR"
+
+## [v1.0.2] - 2026-07-28
+
+### Fixed & Improved
+
+- **Next.js Proxy**: Both Next.js templates now use `export default async function proxy` to match the Next.js 16 Proxy convention and next-intl composition patterns.
+- **i18n Locale Detection**: Removed `localeDetection: false` from the Next.js i18n template so locale negotiation follows next-intl defaults (Accept-Language / cookie).
+
+## [v1.0.1] - 2026-07-27
+
+### Fixed & Improved
+
+- **Skills Installation**: Updated `skills` CLI commands to install non-interactively (`-y`) and target specific skills correctly (`--skill emil-design-eng`).
+- **Gitignore Handling**: Templates now use `_gitignore` which is automatically renamed to `.gitignore` during scaffolding. This prevents npm from stripping the file during publish.
+- **CLI Prompts**: Updated template descriptions to be more accurate and fair:
+  - Next.js: "App Router + Server Components"
+  - TanStack Start: "Type-safe routing + SSR"
     
     ## [v1.0.0] - 2026-07-27
 
