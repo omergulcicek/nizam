@@ -24,7 +24,7 @@ _The Next.js boilerplate that feels effortless._
 
 ---
 
-**Docs:** [See the docs](https://www.virastack.com/nextjs-boilerplate/)
+**Docs:** [See the docs](https://virastack.com/start/docs)
 
 **Contents:** [Why](#why-virastack) · [Features](#features) · [Getting started](#getting-started) · [Environment](#environment-variables) · [Scripts](#scripts) · [Project structure](#project-structure) · [Customization](#customization) · [ViraStack AI](#virastack-ai) · [Deployment](#deployment)
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.5] - 2026-08-01
+
+### Documentation
+
+- **CLI README**: Documented `init` / `add` commands, added `virastack add` examples, and listed the default stack (Query, Zustand, nuqs, RHF, Zod, Base UI, etc.).
+- **Template docs links**: Pointed template README and `llms.txt` product docs to `https://virastack.com/start/docs` (replaced outdated `/nextjs-boilerplate/` URLs).
+
 ## [v1.0.4] - 2026-07-28
 
 ### Fixed & Improved

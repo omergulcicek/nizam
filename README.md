@@ -74,10 +74,12 @@ Which ViraStack tools would you like to include?
 | `@virastack/mask` | Input masking and formatting (Phone, IBAN, etc.) |
 | `@virastack/password` | Password visibility toggle with customizable icons and text |
 
-## Options
+## Commands and options
 
-| Flag | Description |
+| Command / flag | Description |
 | :--- | :--- |
+| `init [name]` | Create a new project (default; also runs with no command) |
+| `add <tool>` | Add a tool to an existing project (`mask`, `password`, `ai`) |
 | `--name <name>` | Project name (or pass as positional / `.`) |
 | `--template <name>` | `nextjs` or `tanstack` |
 | `--tools <list>` | Comma-separated tools (`mask,password`) |
@@ -89,9 +91,28 @@ Which ViraStack tools would you like to include?
 | `-v`, `--version` | Print CLI version |
 | `-h`, `--help` | Show usage |
 
+```bash
+pnpm dlx virastack add mask
+pnpm dlx virastack add password
+pnpm dlx virastack add ai
+```
+
+## Included by default
+
+Every template ships with this stack already installed:
+
+| Area | Packages |
+| :--- | :--- |
+| **State** | TanStack Query, Zustand, nuqs |
+| **Form** | React Hook Form, Zod |
+| **Hooks** | `usehooks-ts` |
+| **UI** | Base UI, Framer Motion, Lucide React |
+
+[ViraStack AI](https://github.com/virastack/ai) encodes these choices as agent rules so assistants follow the same stack from day one.
+
 ## Telemetry
 
-To understand which tools and templates are preferred by the community, ViraStack collects strictly anonymous usage data (template, i18n choice, selected tools, package manager, and CLI version). Absolutely no personal data, project names, or file paths are collected.
+To keep usage statistics, ViraStack collects strictly anonymous data (template, i18n choice, selected tools, package manager, and CLI version). Absolutely no personal data, project names, or file paths are collected.
 
 Opt out anytime: `pnpm dlx virastack --telemetry-disable`
 

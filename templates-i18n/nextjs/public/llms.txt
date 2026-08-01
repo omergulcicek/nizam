@@ -19,7 +19,7 @@ Built on the App Router with Server/Client Components, streaming, and the Metada
 - [Repository (GitHub)](https://github.com/virastack/start): CLI and templates
 - [README](https://github.com/virastack/start/tree/main/templates/nextjs): Features, structure, and conventions
 - [Architecture guide](https://github.com/virastack/ai/blob/main/templates/core/docs/architecture-guide.md): Placement rules and import conventions
-- [Product docs](https://www.virastack.com/nextjs-boilerplate/): ViraStack Next.js boilerplate
+- [Product docs](https://virastack.com/start/docs): ViraStack Start documentation
 
 ## Key Files & Entry Points
 - [`src/app/layout.tsx`](https://github.com/virastack/start/blob/main/templates/nextjs/src/app/layout.tsx): Root layout, fonts, providers
