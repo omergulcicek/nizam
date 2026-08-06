@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.6] - 2026-08-06
+
+### Documentation
+
+- **Template `llms.txt`**: Rewrote i18n Next.js and TanStack editions so agents get locale-aware stack details (`next-intl` / Paraglide) instead of the non-i18n copies.
+- **Agent docs links**: Added `llms-full.txt` and ecosystem `llms.txt` links across templates; fixed TanStack product docs URL to `/start/docs`.
+
 ## [v1.0.5] - 2026-08-01
 
 ### Documentation
